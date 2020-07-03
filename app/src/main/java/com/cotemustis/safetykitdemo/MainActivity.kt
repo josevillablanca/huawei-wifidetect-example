@@ -9,6 +9,7 @@ import com.huawei.hms.api.HuaweiApiAvailability
 import com.huawei.hms.common.ApiException
 import com.huawei.hms.support.api.safetydetect.SafetyDetect
 import com.huawei.hms.support.api.safetydetect.SafetyDetectStatusCodes
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +47,8 @@ class MainActivity : AppCompatActivity() {
 
             Log.e(TAG, "Wifi status $wifiDetectStatus")
 
+            wifiDetectMessage.text = "Wifi status $wifiDetectStatus"
+
         }.addOnFailureListener {
             if (it is ApiException) {
                 val apiException = it
@@ -55,8 +58,14 @@ class MainActivity : AppCompatActivity() {
                             + ": " + apiException.statusMessage
                 )
 
+                wifiDetectMessage.text =
+                    "Error " + apiException.statusCode + ":" + SafetyDetectStatusCodes.getStatusCodeString(
+                        apiException.statusCode
+                    ) + ": " + apiException.statusMessage
+
             } else {
                 Log.e(TAG, "OTHER ERROR: " + it.message)
+                wifiDetectMessage.text = "OTHER ERROR: " + it.message
             }
         }
     }
