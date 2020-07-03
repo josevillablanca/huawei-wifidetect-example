@@ -1,0 +1,12 @@
+{
+  "client": {
+    "cp_id": "80056000000244595",
+    "product_id": "736430079244544658",
+    "client_id": "398182516604798080",
+    "client_secret": "6147A631881E1EE882E959498616F7C2797157B04FF3C1233C060F5C0DF64A3B",
+    "app_id": "102501951",
+    "package_name": "com.cotemustis.safetykitdemo",
+    "api_key": "CgB6e3x9NimQPhxSfaq40yBuvG/xNqqX1ACOUGB73cEbGzNfY6hXMD2OCY3iPhTCSPAwr+UY14/Pfhp2M7w2x2vK"
+  },
+  "configuration_version": "1.0"
+}
